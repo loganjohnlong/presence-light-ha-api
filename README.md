@@ -13,7 +13,8 @@ Creates a [FastAPI](https://github.com/tiangolo/fastapi) bridge to [Home Assista
     - HA_ENTITY: The entity name of the light you want to use in the `<domain>.<name>` format. (I use `light.office_status_light` in mine.)
         - Note: This light must support RGB, or this application will fail
     - HA_TOKEN: The long-lived access token you generated earlier
-5. Run the Docker container with the command `docker run -d --restart=unless-stopped -e "HA_IP=<your-ip>" -e "HA_PORT=<your-port>" -e "HA_ENTITY=<domain>.<name>" -e "HA_TOKEN=<your-token>" loganjlong/presence-light-ha-api`
+    - HA_BRIGHTNESS: An integer between 0 and 100
+5. Run the Docker container with the command `docker run -d --restart=unless-stopped -e "HA_IP=<your-ip>" -e "HA_PORT=<your-port>" -e "HA_ENTITY=<domain>.<name>" -e "HA_TOKEN=<your-token>" -e "HA_BRIGHTNESS=<your-brightness>" --name=presence-light-ha-api loganjlong/presence-light-ha-api`
 6. Set the Custom API values in Presence Light. You should replace the IP and port seen below with the IP and port of this Docker container (not your Home Assistant installation). All calls in this application use POST.
 ![Example Custom API Config](example-custom-api-config.png)
 

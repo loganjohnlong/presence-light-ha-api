@@ -9,6 +9,7 @@ ha_ip = os.environ['HA_IP']
 ha_port = os.environ['HA_PORT']
 ha_entity = os.environ['HA_ENTITY']
 ha_token = os.environ['HA_TOKEN']
+ha_brightness = os.environ['HA_BRIGHTNESS']
 ha_domain = ha_entity.split('.')[0]
 
 
@@ -21,7 +22,8 @@ headers = {
 def payload_color(color_name):
     payload = {
         "entity_id": ha_entity,
-        "color_name": color_name
+        "color_name": color_name,
+        "brightness": ha_brightness
     }
     return payload
 
