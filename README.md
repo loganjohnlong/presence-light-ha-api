@@ -8,7 +8,7 @@ Creates a [FastAPI](https://github.com/tiangolo/fastapi) bridge to [Home Assista
 2. Run the Docker file on a server of your choice (including your local machine)
 3. Get a [Long-lived Access Token](https://www.atomicha.com/home-assistant-how-to-generate-long-lived-access-token-part-1/) from your Home Assistant installation
 4. Set the following environment variables in Docker:
-    - HA_IP: The IP Address of FQDN of your Home Assistant installation that the Docker container will be able to access
+    - HA_IP: The IP Address or FQDN of your Home Assistant installation that the Docker container will be able to access
     - HA_PORT: The port that your Home Assistant installation runs on (Normally, this is `8123`)
     - HA_ENTITY: The entity name of the light you want to use in the `<domain>.<name>` format. (I use `light.office_status_light` in mine.)
         - Note: This light must support RGB, or this application will fail
